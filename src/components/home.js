@@ -27,7 +27,7 @@ export default class Home extends Component{
         return (
             <div>
                 <Banner />
-                <ArtistList />
+                <ArtistList allArtist={this.state.artists} />
             </div>
         );
     }
