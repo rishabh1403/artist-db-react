@@ -11,11 +11,23 @@ export default class Home extends Component{
             artists : ''
         }
     }
+    componentDidMount(){
+        fetch(URL_ARTISTS,{
+            method:'GET'
+        })
+        .then(response => response.json())
+        .then(json => {
+            this.setState({
+                artists : json
+            });
+        })
+    }
 
     render(){
         return (
             <div>
                 <Banner />
+                <ArtistList />
             </div>
         );
     }
